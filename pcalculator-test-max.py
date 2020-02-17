@@ -15,6 +15,8 @@ cards = [["h2", "d2", "c2", "s2"],
          ["hK", "dK", "cK", "sK"], 
          ["hA", "dA", "cA", "sA"]]
 
+opponents_default = []
+flop_default = []
 
 while True: 
     card1 = input("Your first card:")
@@ -23,6 +25,10 @@ while True:
 
     player_cards = [card1, card2]
     usable_cards = cards
+    flop = flop_default
+    print(flop)
+    opponents = opponents_default
+    print(opponents)
 
     for index_row, row in enumerate(usable_cards):
         for index_card, card in enumerate(row):
@@ -32,15 +38,34 @@ while True:
                 del usable_cards[index_row][index_card]
     
     print(usable_cards)
+    print("-")
     print(player_cards)
+    print("-")
 
     for player in range(number_of_opponents):
-        for cards_per_hand in range(2)
+        opponents.append([])
+        for cards_per_hand in range(2):
             while True:
                 row_number = random.randint(0, 12)
                 if len(usable_cards[row_number]) != 0:
                     break
             card_number = random.randint(0, len(usable_cards[row_number]) - 1)
-            print(card_number)
 
-#måste signa numrena till korten för att sedan signa korten till motståndarens hand och ta bort från listan
+            opponents[player].append({"card" + str(cards_per_hand) : usable_cards[row_number][card_number]})
+            del usable_cards[row_number][card_number]
+
+    for flop_card in range(5):
+        while True:
+            row_number = random.randint(0, 12)
+            if len(usable_cards[row_number]) != 0:
+                break
+        card_number = random.randint(0, len(usable_cards[row_number]) - 1)
+        flop.append(usable_cards[row_number][card_number])
+        del usable_cards[row_number][card_number]
+
+
+    print(opponents)
+    print("-")
+    print(usable_cards)
+           
+    #resettas inte
