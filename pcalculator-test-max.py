@@ -1,7 +1,11 @@
 import random
 
 
-cards = [["h2", "d2", "c2", "s2"],
+while True: 
+    flop = []
+    opponents = []
+
+    usable_cards = [["h2", "d2", "c2", "s2"],
          ["h3", "d3", "c3", "s3"],
          ["h4", "d4", "c4", "s4"],
          ["h5", "d5", "c5", "s5"], 
@@ -15,20 +19,11 @@ cards = [["h2", "d2", "c2", "s2"],
          ["hK", "dK", "cK", "sK"], 
          ["hA", "dA", "cA", "sA"]]
 
-opponents_default = []
-flop_default = []
-
-while True: 
     card1 = input("Your first card:")
     card2 = input("Your second card:")
     number_of_opponents = int(input("Hur många motståndare"))
 
     player_cards = [card1, card2]
-    usable_cards = cards
-    flop = flop_default
-    print(flop)
-    opponents = opponents_default
-    print(opponents)
 
     for index_row, row in enumerate(usable_cards):
         for index_card, card in enumerate(row):
@@ -36,11 +31,6 @@ while True:
                 del usable_cards[index_row][index_card]
             if card2 == card:
                 del usable_cards[index_row][index_card]
-    
-    print(usable_cards)
-    print("-")
-    print(player_cards)
-    print("-")
 
     for player in range(number_of_opponents):
         opponents.append([])
@@ -63,9 +53,7 @@ while True:
         flop.append(usable_cards[row_number][card_number])
         del usable_cards[row_number][card_number]
 
-
+    print(player_cards)
     print(opponents)
-    print("-")
+    print(flop)
     print(usable_cards)
-           
-    #resettas inte
