@@ -107,5 +107,5 @@ def one_pair(cards_on_table, card_on_hand1, card_on_hand2):
             print("pair")
 
         
-one_pair(table, hand1, hand2)
+print(streight(table, hand1, hand2))
 
