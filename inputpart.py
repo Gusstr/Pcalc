@@ -107,7 +107,7 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
         if all_cards.count(x) == 2:
             final_hand.append(x)
             kickers = 3
-            del all_cards(x)
+            del all_cards[x]
         if all_cards.count(x) == 3:
             final_hand.append(x)
             kickers = 2
