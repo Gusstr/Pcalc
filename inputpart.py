@@ -10,14 +10,14 @@
 
 # return antingen None eller en lista av integers [5, 8, 10, 12, 13]
 
-hand1 = ("h", 6)
+hand1 = ("h", 7)
 hand2 = ("c", 5)
 
 table = [
-    ('h', 4),
+    ('h', 2),
     ('h', 7),
-    ('h', 14),
-    ('s', 3),
+    ('h', 4),
+    ('s', 8),
     ('h', 8)
 ]
 
@@ -90,22 +90,47 @@ def streight(cards_on_table, card_on_hand1, card_on_hand2):
             if y + 2 in all_cards:
                 if y + 3 in all_cards:
                     if y + 4 in all_cards:
-                        highest_flush = y+4
-    return highest_flush
+                        highest_streight = y+4
+    return highest_streight
 
             
-def one_pair(cards_on_table, card_on_hand1, card_on_hand2):
+def pairs(cards_on_table, card_on_hand1, card_on_hand2):
     all_cards = []
+    final_hand = []
     all_cards.append(card_on_hand1[1])
     all_cards.append(card_on_hand2[1])
     for x in cards_on_table:
         all_cards.append([x][0][1])
-    all_cards.sort()
+    all_cards.sort(reverse=True)
+    #print(all_cards)
     for x in all_cards:
-        #måste hitta ett sätt där den ser om x finns två gånger i ala_cards
-        if x & x in all_cards:
-            print("pair")
+        if all_cards.count(x) == 2:
+            final_hand.append(x)
+            kickers = 3
+            del all_cards[x]
+        if all_cards.count(x) == 3:
+            final_hand.append(x)
+            kickers = 2
+        if all_cards.count(x) == 4:
+            final_hand.append(x)
+            kickers = 1
+    if final_hand[0] == final_hand[1] and final_hand[2] == final_hand[3]:
+        final_hand.append(all_cards[0])
+    else:
+        if kickers == 3:
+            final_hand.append(all_cards[0])
+            final_hand.append(all_cards[1])
+            final_hand.append(all_cards[2])
+        elif kickers == 2:
+            final_hand.append(all_cards[0])
+            final_hand.append(all_cards[1])
+        elif kickers == 1:
+            final_hand.append(all_cards[0])
+    print(final_hand)
+
 
         
-print(streight(table, hand1, hand2))
+pairs(table, hand1, hand2)
+
+
 
