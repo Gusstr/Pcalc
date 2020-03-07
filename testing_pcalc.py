@@ -1,4 +1,7 @@
-listan = ["hej", "varför", "funkar"]
+listan = [("a", "b"), ("c", "d")]
 
-for x, y in enumerate(listan):
-    print(x)
+print(listan)
+
+listan[0].insert(1, "c")
+
+print(listan)
