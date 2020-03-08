@@ -39,7 +39,7 @@ for player in range(number_of_opponents):
                 break
         card_number = random.randint(0, len(usable_cards[row_number]) - 1)
 
-        opponents[player].append((usable_cards[row_number][card_number][0], usable_cards[row_number][card_number][1]))
+        opponents[player].append([usable_cards[row_number][card_number][0], usable_cards[row_number][card_number][1]])
         del usable_cards[row_number][card_number]
 
 for flop_card in range(5):
@@ -51,5 +51,6 @@ for flop_card in range(5):
     flop.append(usable_cards[row_number][card_number])
     del usable_cards[row_number][card_number]
 
+print(opponents)
 
 
