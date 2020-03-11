@@ -1,9 +1,7 @@
-list1 = [1, 2, 3, 4, 5]
-list2 = []
+listan = [("a", "b"), ("c", "d")]
 
-print(list1)
-print(list2)
+print(listan)
 
-list1 = list2
+listan[0].insert(1, "c")
 
-print(list1)
+print(listan)
