@@ -40,7 +40,6 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
         elif ([x][0][0]) == "c":
             c = c + 1
             c_flush.append([x][0][1])
-    print(h, s, d, c)
     if card_on_hand1[0] == "h":
         h = h + 1
         h_flush.append(card_on_hand1[1])
@@ -65,6 +64,7 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
     if card_on_hand2[0] == "d":
         d = d + 1
         d_flush.append(card_on_hand2[1])
+    print(h, s, d, c)
     if h > 4:
         h_flush.sort(reverse=True)
         return h_flush

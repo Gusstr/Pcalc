@@ -1,7 +1,4 @@
-listan = [("a", "b"), ("c", "d")]
+x = "hej"
 
-print(listan)
-
-listan[0].insert(1, "c")
-
-print(listan)
+if x == "hej":
+    print("w")
