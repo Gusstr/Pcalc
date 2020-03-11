@@ -10,15 +10,15 @@
 
 # return antingen None eller en lista av integers [5, 8, 10, 12, 13]
 
-hand1 = ("h", 7)
-hand2 = ("c", 5)
+hand1 = ("h", 3)
+hand2 = ("c", 4)
 
 table = [
-    ('h', 2),
-    ('h', 7),
-    ('h', 4),
-    ('s', 8),
-    ('h', 8)
+    ('h', 13),
+    ('h', 8),
+    ('h', 8),
+    ('s', 9),
+    ('h', 14)
 ]
 
 def flush(cards_on_table, card_on_hand1, card_on_hand2):
@@ -103,33 +103,75 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
         all_cards.append([x][0][1])
     all_cards.sort(reverse=True)
     #print(all_cards)
+    kickers = 5
     for x in all_cards:
         if all_cards.count(x) == 2:
             final_hand.append(x)
             kickers = 3
-            del all_cards[x]
         if all_cards.count(x) == 3:
             final_hand.append(x)
             kickers = 2
         if all_cards.count(x) == 4:
             final_hand.append(x)
             kickers = 1
-    if final_hand[0] == final_hand[1] and final_hand[2] == final_hand[3]:
-        final_hand.append(all_cards[0])
-    else:
+
+    ####kommer antagligen inte 
+    if len(final_hand) > 5:
+        if len(final_hand) == 6:
+            del final_hand[-1] 
+        elif len(final_hand) == 7:
+            del final_hand[-1]
+            del final_hand[-2]
+        
+    print(all_cards)
+    check_kickers = 1
+    if len(final_hand) == 4 or len(final_hand) == 5:
+        if len(final_hand) == 4:
+            if final_hand[0] == final_hand[1] and final_hand[2] == final_hand[3]:
+                check_kickers = 1
+                kickers = 1
+            else:
+                check_kickers = 1
+                kickers = 1
+        elif len(final_hand) == 5:
+            if final_hand[0] == final_hand[1] and final_hand[2] == final_hand[3] == final_hand[4] or final_hand[0] == final_hand[1] == final_hand[2] and final_hand[3] == final_hand[4]:
+                check_kickers = 2
+                kickers = 0
+            else:
+                del final_hand[-1]
+                check_kickers = 1
+                kickers = 1
+        
+    if check_kickers == 1:
+        if kickers == 5:
+            final_hand.append(all_cards[0])
+            final_hand.append(all_cards[1])
+            final_hand.append(all_cards[2])
+            final_hand.append(all_cards[3])
+            final_hand.append(all_cards[4])
         if kickers == 3:
+            all_cards.remove(final_hand[0])
+            all_cards.remove(final_hand[1])
+
             final_hand.append(all_cards[0])
             final_hand.append(all_cards[1])
             final_hand.append(all_cards[2])
         elif kickers == 2:
+            all_cards.remove(final_hand[0])
+            all_cards.remove(final_hand[1])
+            all_cards.remove(final_hand[2])
+
             final_hand.append(all_cards[0])
             final_hand.append(all_cards[1])
         elif kickers == 1:
+            all_cards.remove(final_hand[0])
+            all_cards.remove(final_hand[1])
+            all_cards.remove(final_hand[2])
+            all_cards.remove(final_hand[3])
+
             final_hand.append(all_cards[0])
     print(final_hand)
 
-
-        
 pairs(table, hand1, hand2)
 
 
