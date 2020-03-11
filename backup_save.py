@@ -14,11 +14,11 @@ hand1 = ("h", 3)
 hand2 = ("c", 4)
 
 table = [
-    ('s', 4),
-    ('s', 5),
-    ('h', 4),
-    ('c', 11),
-    ('h', 11)
+    ('h', 13),
+    ('h', 8),
+    ('h', 8),
+    ('s', 9),
+    ('h', 14)
 ]
 
 def flush(cards_on_table, card_on_hand1, card_on_hand2):
@@ -40,6 +40,7 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
         elif ([x][0][0]) == "c":
             c = c + 1
             c_flush.append([x][0][1])
+    print(h, s, d, c)
     if card_on_hand1[0] == "h":
         h = h + 1
         h_flush.append(card_on_hand1[1])
@@ -64,7 +65,6 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
     if card_on_hand2[0] == "d":
         d = d + 1
         d_flush.append(card_on_hand2[1])
-    print(h, s, d, c)
     if h > 4:
         h_flush.sort(reverse=True)
         return h_flush
@@ -77,8 +77,6 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
     if d > 4:
         d_flush.sort(reverse=True)
         return d_flush
-    else:
-        return "No flush"
 
 def streight(cards_on_table, card_on_hand1, card_on_hand2):
     all_cards = []
@@ -95,6 +93,7 @@ def streight(cards_on_table, card_on_hand1, card_on_hand2):
                         highest_streight = y+4
     return highest_streight
 
+            
 def pairs(cards_on_table, card_on_hand1, card_on_hand2):
     all_cards = []
     final_hand = []
@@ -103,8 +102,7 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
     for x in cards_on_table:
         all_cards.append([x][0][1])
     all_cards.sort(reverse=True)
-    print(all_cards)
-
+    #print(all_cards)
     kickers = 5
     for x in all_cards:
         if all_cards.count(x) == 2:
@@ -116,7 +114,8 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
         if all_cards.count(x) == 4:
             final_hand.append(x)
             kickers = 1
- 
+
+    ####kommer antagligen inte 
     if len(final_hand) > 5:
         if len(final_hand) == 6:
             del final_hand[-1] 
@@ -174,6 +173,3 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
     print(final_hand)
 
 pairs(table, hand1, hand2)
-
-
-
