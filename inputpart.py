@@ -173,7 +173,10 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
             final_hand.append(all_cards[0])
     print(final_hand)
 
-pairs(table, hand1, hand2)
+
+print(streight(table, hand1, hand2))
+
+#pairs(table, hand1, hand2)
 
 
 
