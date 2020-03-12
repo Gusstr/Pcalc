@@ -11,14 +11,14 @@
 # return antingen None eller en lista av integers [5, 8, 10, 12, 13]
 
 hand1 = ("h", 3)
-hand2 = ("c", 4)
+hand2 = ("h", 4)
 
 table = [
     ('s', 4),
-    ('s', 5),
-    ('h', 4),
+    ('h', 5),
+    ('h', 6),
     ('c', 11),
-    ('h', 11)
+    ('h', 2)
 ]
 
 def flush(cards_on_table, card_on_hand1, card_on_hand2):
@@ -78,7 +78,29 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
         d_flush.sort(reverse=True)
         return d_flush
     else:
-        return "No flush"
+        return 0
+
+def str_flush(cards_on_table, card_on_hand1, card_on_hand2):
+    if flush(cards_on_table, card_on_hand1, card_on_hand2) != 0:
+        all_cards = []
+        final_hand = []
+        all_cards.append(card_on_hand1[1])
+        all_cards.append(card_on_hand2[1])
+        for x in cards_on_table:
+            all_cards.append([x][0][1])
+        all_cards.sort()
+        for y in all_cards:
+            if y + 1 in all_cards:
+                if y + 2 in all_cards:
+                    if y + 3 in all_cards:
+                        if y + 4 in all_cards:
+                            final_hand = [y+4, y+3, y+2, y+1, y]
+                            return final_hand
+
+
+    else:
+        return 0
+
 
 def streight(cards_on_table, card_on_hand1, card_on_hand2):
     all_cards = []
@@ -87,6 +109,7 @@ def streight(cards_on_table, card_on_hand1, card_on_hand2):
     for x in cards_on_table:
         all_cards.append([x][0][1])
     all_cards.sort()
+    highest_streight = 0
     for y in all_cards:
         if y + 1 in all_cards:
             if y + 2 in all_cards:
@@ -94,6 +117,7 @@ def streight(cards_on_table, card_on_hand1, card_on_hand2):
                     if y + 4 in all_cards:
                         highest_streight = y+4
     return highest_streight
+    
 
 def pairs(cards_on_table, card_on_hand1, card_on_hand2):
     all_cards = []
@@ -173,7 +197,7 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
             final_hand.append(all_cards[0])
     print(final_hand)
 
-pairs(table, hand1, hand2)
+str_flush(table, hand1, hand2)
 
 
 
