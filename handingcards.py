@@ -51,6 +51,5 @@ for flop_card in range(5):
     flop.append(usable_cards[row_number][card_number])
     del usable_cards[row_number][card_number]
 
-print(opponents)
 
 

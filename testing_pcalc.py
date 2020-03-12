@@ -1,7 +1,10 @@
-listan = [("a", "b"), ("c", "d")]
+def testing():
+    x = 10
+    if x == 9:
+        return x
+    x = 11
+    print("hello")
+    if x == 11:
+        return x
 
-print(listan)
-
-listan[0].insert(1, "c")
-
-print(listan)
+print(testing())

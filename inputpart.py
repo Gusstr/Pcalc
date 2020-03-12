@@ -64,6 +64,7 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
     if card_on_hand2[0] == "d":
         d = d + 1
         d_flush.append(card_on_hand2[1])
+    print(h, s, d, c)
     if h > 4:
         h_flush.sort(reverse=True)
         return h_flush
