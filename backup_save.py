@@ -78,6 +78,23 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
         d_flush.sort(reverse=True)
         return d_flush
 
+def str_flush(cards_on_table, card_on_hand1, card_on_hand2):
+    if flush(cards_on_table, card_on_hand1, card_on_hand2) != 0:
+        all_cards = []
+        final_hand = []
+        all_cards.append(card_on_hand1[1])
+        all_cards.append(card_on_hand2[1])
+        for x in cards_on_table:
+            all_cards.append([x][0][1])
+        all_cards.sort()
+        for y in all_cards:
+            if y + 1 in all_cards:
+                if y + 2 in all_cards:
+                    if y + 3 in all_cards:
+                        if y + 4 in all_cards:
+                            final_hand = [y+4, y+3, y+2, y+1, y]
+                            return final_hand
+
 def streight(cards_on_table, card_on_hand1, card_on_hand2):
     all_cards = []
     all_cards.append(card_on_hand1[1])
