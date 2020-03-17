@@ -127,7 +127,6 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
     for x in cards_on_table:
         all_cards.append([x][0][1])
     all_cards.sort(reverse=True)
-    print(all_cards)
 
     kickers = 5
     for x in all_cards:
@@ -195,9 +194,9 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
             all_cards.remove(final_hand[3])
 
             final_hand.append(all_cards[0])
-    print(final_hand)
+    return final_hand
 
-str_flush(table, hand1, hand2)
+print(pairs(table, hand1, hand2))
 
 
 
