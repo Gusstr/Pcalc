@@ -64,7 +64,6 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
     if card_on_hand2[0] == "d":
         d = d + 1
         d_flush.append(card_on_hand2[1])
-    print(h, s, d, c)
     if h > 4:
         h_flush.sort(reverse=True)
         return h_flush
@@ -196,7 +195,11 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
             final_hand.append(all_cards[0])
     return final_hand
 
+<<<<<<< HEAD
 print(pairs(table, hand1, hand2))
+=======
+print(str_flush(table, hand1, hand2))
+>>>>>>> e500657d95116b38cb50a88f4cbd9765571823dd
 
 
 
