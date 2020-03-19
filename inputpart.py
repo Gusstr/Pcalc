@@ -193,8 +193,6 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
             final_hand.append(all_cards[0])
     return final_hand
 
-print(str_flush(table, hand1, hand2))
-
-
 
 print(pairs(table, hand1, hand2))
+
