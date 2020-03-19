@@ -1,7 +1,5 @@
-x  = False 
+x = 10 
+y = 4
 
-if x == False:
-    x = 3
-
-print(x)
-                
+if x == 10 and if y == 4:
+    print("hej")
