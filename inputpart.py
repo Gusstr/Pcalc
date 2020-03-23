@@ -10,14 +10,14 @@
 
 # return antingen None eller en lista av integers [5, 8, 10, 12, 13]
 
-hand1 = ("h", 3)
-hand2 = ("h", 4)
+hand1 = ("h", 13)
+hand2 = ("c", 13)
 
 table = [
-    ('s', 4),
-    ('h', 5),
+    ('s', 14),
+    ('h', 14),
     ('h', 6),
-    ('c', 11),
+    ('c', 14),
     ('h', 2)
 ]
 
