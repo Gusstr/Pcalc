@@ -192,11 +192,5 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
             final_hand.append(all_cards[0])
     return final_hand
 
-<<<<<<< HEAD
-print(pairs(table, hand1, hand2))
-
-=======
->>>>>>> d02969f57839b3eaff8975b054b11c918c0bff55
-
 print(pairs(table, hand1, hand2))
 
