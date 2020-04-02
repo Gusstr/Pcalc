@@ -1,26 +1,3 @@
-#input_hand1 = input()
-#input_hand2 = input()
-#hälften är på input resten är på handö
-#table = ["h4", "h7", "hA", "s3", "h8"]
-
-#if input_hand1[1] = "a" or "k" or "q" or "t":
- #   print()
-#else:
-#    hand1 = input_hand1
-
-# return antingen None eller en lista av integers [5, 8, 10, 12, 13]
-
-hand1 = ("h", 3)
-hand2 = ("h", 4)
-
-table = [
-    ('s', 4),
-    ('h', 5),
-    ('h', 6),
-    ('c', 11),
-    ('h', 2)
-]
-
 def flush(cards_on_table, card_on_hand1, card_on_hand2):
     c = h = s = d = 0
     h_flush = []
@@ -77,7 +54,7 @@ def flush(cards_on_table, card_on_hand1, card_on_hand2):
         d_flush.sort(reverse=True)
         return d_flush
     else:
-        return False
+        return 0
 
 def str_flush(cards_on_table, card_on_hand1, card_on_hand2):
     if flush(cards_on_table, card_on_hand1, card_on_hand2) != 0:
@@ -95,25 +72,32 @@ def str_flush(cards_on_table, card_on_hand1, card_on_hand2):
                         if y + 4 in all_cards:
                             final_hand = [y+4, y+3, y+2, y+1, y]
                             return final_hand
-    else:
-        return False
+                        else:
+                            return 0
+                    else:
+                        return 0
+                else:
+                    return 0
+            else:
+                return 0
+    return 0
 
 
-def streight(cards_on_table, card_on_hand1, card_on_hand2):
+def straight(cards_on_table, card_on_hand1, card_on_hand2):
     all_cards = []
     all_cards.append(card_on_hand1[1])
     all_cards.append(card_on_hand2[1])
     for x in cards_on_table:
         all_cards.append([x][0][1])
     all_cards.sort()
-    highest_streight = 0
+    highest_straight = 0
     for y in all_cards:
         if y + 1 in all_cards:
             if y + 2 in all_cards:
                 if y + 3 in all_cards:
                     if y + 4 in all_cards:
-                        highest_streight = y+4
-    return highest_streight
+                        highest_straight = y+4
+    return highest_straight
     
 
 def pairs(cards_on_table, card_on_hand1, card_on_hand2):
@@ -191,6 +175,9 @@ def pairs(cards_on_table, card_on_hand1, card_on_hand2):
 
             final_hand.append(all_cards[0])
     return final_hand
+<<<<<<< HEAD
 
 print(pairs(table, hand1, hand2))
 
+=======
+>>>>>>> 76aafdd1a3f3f6a8fa9f6dca51f59364c6b0c59a
