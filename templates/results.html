@@ -18,11 +18,11 @@
         position: relative;
         margin: 15px;
     }
-    .Cards_Input {
+    .result_output {
+        color: darkred;
         position: relative;
-        margin: auto;
-        text-align: center;
-        margin-top: 65px;
+        margin-top: 100px;
+        margin: 100px;
     }
 </style>
 
@@ -33,20 +33,15 @@
 <body>
     <div class="topbar">
         <div class="NlCalc"><p>preflop calculator</p1></div>
-
     </div>
 
-    <div class="Cards_Input">
-        <form action="{{ url_for('handle_data') }}" method="POST">
-            <p>Input cards!</p>
-            <input type="text" name="card1" id="C1"><br>
-            <input type="text" name="card2" id="C2"><br>
-            <label>Players: </label><br>
-            <input type="number" name="players">
-            <br><input type="submit" value="submit">
-        </form>
-    </div>
+    <div class="result_output">
+        <p>winpercentage: : {{ procent_over }}%</p><br>
+        <p>winpercentage over avrage: {{ hand_strength }}% </p><br>
+        <p>split percentage: {{ split }}% </p>
 
+    </div>
+    
 
 </body>
 </html>
