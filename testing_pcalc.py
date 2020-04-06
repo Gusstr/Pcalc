@@ -14,7 +14,6 @@ def main_function(card1, card2, number_of_opponents):
             amount_of_wins += 1
         if winner == 50:
             amount_of_splits += 1
-        print(round)
 
     win_percentage = amount_of_wins / 10
     split_precentage = amount_of_splits / 10

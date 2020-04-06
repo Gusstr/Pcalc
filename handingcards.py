@@ -22,7 +22,6 @@ def player_card_giver(card1, card2,):
                 del cards[index_row][index_card]
             if card2 == card:
                 del cards[index_row][index_card]
-    print(cards)
     return cards, player_cards
 
 def card_randomizer(original_cards, num_opponents):
