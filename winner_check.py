@@ -1,8 +1,6 @@
 import inputpart
 
 def winner_check (flop, opponents):
-    print(flop)
-    print(opponents)
     winner_index = 100
     win_on_strflush = []
     for player_index, player in enumerate(opponents):
@@ -24,8 +22,6 @@ def winner_check (flop, opponents):
                             winner_index = 50
 
     if winner_index != 100:
-        print("strflush")
-        print(win_on_strflush)
         return winner_index
 
     win_on_four_of_a_kind = []
@@ -47,8 +43,6 @@ def winner_check (flop, opponents):
                     if inputpart.pairs(flop, opponents[player_index][0], opponents[player_index][1])[4] == win_on_four_of_a_kind[4]:
                         winner_index = player_index
     if winner_index != 100:
-        print(win_on_four_of_a_kind)
-        print("four_of")
         return winner_index
 
     win_on_full_house = []
@@ -84,8 +78,6 @@ def winner_check (flop, opponents):
                 if pair_value == winner_pair_value and winner_index == 0:
                     winner_index = 50
     if winner_index != 100:
-        print(win_on_full_house)
-        print("full house")
         return winner_index
 
     win_on_flsuh = []
@@ -107,8 +99,6 @@ def winner_check (flop, opponents):
                         if winner_index == 0:
                             winner_index = 50
     if winner_index != 100:
-        print(win_on_flsuh)
-        print("flush")
         return winner_index
 
     win_on_straight = 0
@@ -119,8 +109,6 @@ def winner_check (flop, opponents):
         elif inputpart.straight(flop, opponents[player_index][0], opponents[player_index][1]) == win_on_straight and winner_index == 0:
             winner_index = 50
     if winner_index != 100:
-        print(win_on_straight)
-        print("straight")
         return winner_index
 
     win_on_three_of_a_kind = []
@@ -147,8 +135,6 @@ def winner_check (flop, opponents):
                             if winner_index == 0:
                                 winner_index = 50
     if winner_index != 100:
-        print(win_on_three_of_a_kind)
-        print("thrre of a kind")
         return winner_index
 
     win_on_two_pair = []
@@ -169,8 +155,6 @@ def winner_check (flop, opponents):
                         if winner_index == 0:
                             winner_index = 50
     if winner_index != 100:
-        print(win_on_two_pair)
-        print("two pair")
         return winner_index
 
     win_on_pair = []
@@ -191,8 +175,6 @@ def winner_check (flop, opponents):
                         if winner_index == 0:
                             winner_index = 50
     if winner_index != 100:
-        print(win_on_pair)
-        print("pair")
         return winner_index
 
     win_on_high_card = []
@@ -210,8 +192,6 @@ def winner_check (flop, opponents):
                 if card == 4 and inputpart.pairs(flop, opponents[player_index][0], opponents[player_index][1])[card] == win_on_high_card[card]:
                     if winner_index == 0:
                         winner_index = 50
-    print(win_on_high_card)
-    print("hihg")
     return winner_index
             
                 

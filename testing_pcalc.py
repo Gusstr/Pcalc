@@ -14,15 +14,11 @@ def main_function(card1, card2, number_of_opponents):
             amount_of_wins += 1
         if winner == 50:
             amount_of_splits += 1
-        print(round)
 
     win_percentage = amount_of_wins / 10
     split_precentage = amount_of_splits / 10
 
     win_precentage_over_avarage = win_percentage - (100 / (number_of_opponents + 1))
-    print("chansen att vinna är:", win_percentage,"%")
-    print(win_precentage_over_avarage)
-    print("chansen för split är:", split_precentage,"%")
     return win_percentage, win_precentage_over_avarage
 
 print(main_function("hT", "h6", 3))
