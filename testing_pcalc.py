@@ -23,7 +23,7 @@ def main_function(card1, card2, number_of_opponents):
     print("chansen att vinna är:", win_percentage,"%")
     print(win_precentage_over_avarage)
     print("chansen för split är:", split_precentage,"%")
-    return win_percentage, win_precentage_over_avarage
+    return win_percentage, win_precentage_over_avarage, split_precentage
 
-print(main_function("hT", "h6", 3))
+
 
