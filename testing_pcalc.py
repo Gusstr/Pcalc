@@ -21,5 +21,3 @@ def main_function(card1, card2, number_of_opponents):
     win_precentage_over_avarage = win_percentage - (100 / (number_of_opponents + 1))
     return win_percentage, win_precentage_over_avarage
 
-print(main_function("hT", "h6", 3))
-
