@@ -19,10 +19,6 @@ def main_function(card1, card2, number_of_opponents):
     split_precentage = amount_of_splits / 10
 
     win_precentage_over_avarage = win_percentage - (100 / (number_of_opponents + 1))
-    print("chansen att vinna är:", win_percentage,"%")
-    print(win_precentage_over_avarage)
-    print("chansen för split är:", split_precentage,"%")
     return win_percentage, win_precentage_over_avarage, split_precentage
-
 
 
