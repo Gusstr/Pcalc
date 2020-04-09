@@ -18,6 +18,10 @@
         position: relative;
         margin: 15px;
     }
+    .side {
+        margin:20px;
+        color: white;
+    }
     .Cards_Input {
         position: relative;
         margin: auto;
@@ -32,17 +36,16 @@
 </head>
 <body>
     <div class="topbar">
-        <div class="NlCalc"><p>preflop calculator</p1></div>
-
+        <div class="NlCalc"><a style="color: white;" href="/">preflop calculator</a><a class="side" href="url">Beginners tips</a><a class="side" href="ok">promotians</a></div>
     </div>
 
     <div class="Cards_Input">
-        <form action="{{ url_for('handle_data') }}" method="POST">
+        <form action="{{ url_for('handle_data') }}" method="POST" autocomplete="off">
             <p>Input cards!</p>
             <input type="text" name="card1" id="C1"><br>
             <input type="text" name="card2" id="C2"><br>
             <label>Players: </label><br>
-            <input type="number" name="players">
+            <input type="number" name="players" value="1">
             <br><input type="submit" value="submit">
         </form>
     </div>
