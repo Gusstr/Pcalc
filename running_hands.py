@@ -1,5 +1,5 @@
 def main_function(card1, card2, number_of_opponents):
-    import handingcards
+    import handing_cards
     import translator
     import winner_check
 
@@ -7,8 +7,8 @@ def main_function(card1, card2, number_of_opponents):
     amount_of_splits = 0
 
     for round in range(1000):
-        returns_of_player_card_giver = handingcards.player_card_giver(card1, card2)
-        cards = translator.card_translator(handingcards.card_randomizer(returns_of_player_card_giver[0], number_of_opponents), returns_of_player_card_giver[1])
+        returns_of_player_card_giver = handing_cards.player_card_giver(card1, card2)
+        cards = translator.card_translator(handing_cards.card_randomizer(returns_of_player_card_giver[0], number_of_opponents), returns_of_player_card_giver[1])
         winner = winner_check.winner_check(cards[0], cards[1])
         if winner == 0:
             amount_of_wins += 1

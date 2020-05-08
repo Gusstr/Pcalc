@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, render_template
-import testing_pcalc
+import running_hands
 app = Flask(__name__)
 @app.route('/', methods = ['GET'])
 def get_input():
@@ -41,7 +41,7 @@ def handle_data():
     if key1 == key2 == 1:
         players = request.form['players']
         players = int(players)
-        A1, A2, A3 = testing_pcalc.main_function(C1, C2, players)   
+        A1, A2, A3 = running_hands.main_function(C1, C2, players)   
         return render_template('results.html', procent_over=A1, hand_strength=A2, split=A3)
         #redirect('/input')
     else:
