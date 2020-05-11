@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, render_template
-import running_hands
+from others.runs_hands import running_hands
 app = Flask(__name__)
 @app.route('/', methods = ['GET'])
 def get_input():
