@@ -1,4 +1,4 @@
-import determine_handstrength
+from others.winner_of_the_hand import determine_handstrength
 
 def winner_check (flop, opponents):
     winner_index = 100

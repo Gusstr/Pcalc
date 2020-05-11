@@ -1,7 +1,7 @@
 def main_function(card1, card2, number_of_opponents):
-    import handing_cards
-    import translator
-    import winner_check
+    from others.giving_cards import handing_cards
+    from others.giving_cards import translator
+    from others.winner_of_the_hand import winner_check
 
     amount_of_wins = 0
     amount_of_splits = 0
